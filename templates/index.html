@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+
+{%block title%}Blogs | Home{%endblock title%}
+
+
+{%block content%} 
+
+{%if user.is_authenticated%}
+
+ Welcome {{user.username}}
+ <a href="{%url 'logout'%}">LOGOUT</a>
+
+{%else%}
+<a href="{%url 'login'%}">LOGIN</a>
+{%for meo in memo%}
+<h1>{{meo.title}}</h1>
+<p>{{meo.body}}</p>
+<h2>{{meo.authorz}}</h2>
+<p>{{meo.dat}}</p>
+{%endfor%}
+
+{%endif%}
+
+{%endblock content%}

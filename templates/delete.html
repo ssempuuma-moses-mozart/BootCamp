@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+
+{%block title%}Blog{%endblock title%}
+
+{%block content%}
+
+<h1>Memo| Delete</h1>
+<form action="" method="Post">
+
+{%csrf_token%}
+{{form.as_p}}
+<p>Do you want to delete {{meo.title}}</p>
+<input type="submit" value="Delete">
+</form>
+<h1><a href="{% url 'index'%}">Go Back</a></h1>
+{%endblock content%}
